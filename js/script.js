@@ -1,3 +1,5 @@
+// creates an array of quote objects
+// properties available are quote, source, citation, year, and tags
 let quotes = [
 	{
 		quote: "But as for me, give me liberty or give me death",
@@ -50,23 +52,32 @@ let quotes = [
 	}
 ];
 
+// returns a quote object based on a randomly selected index of all the quotes
 function getRandomQuote() {
 	let index = Math.floor(Math.random() * quotes.length);
 	return quotes[index];
 }
 
+// retrieves a quote object and constructs an HTML string based on the quote object properties
+// then it displays the final HTML string to the page
 function printQuote() {
 	let quote = getRandomQuote();
 	let html = ''; 
 	html +=	'<p class="quote">' + quote.quote + '</p>';
 	html += '<p class="source">' + quote.source;
+
+	// citation property is optional, only show if available
 	if(quote.citation !== undefined) {
 		html += '<span class="citation">' + quote.citation + '</span>';
 	}
+	
+	// year property is optional, only show if available
 	if(quote.year !== undefined) {
 		html += '<span class="year">' + quote.year + '</span>';
 	}
+	
 	html += '</p>'
+	
 	document.getElementById('quote-box').innerHTML = html;
 }
 
