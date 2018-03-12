@@ -52,6 +52,36 @@ let quotes = [
 	}
 ];
 
+// background color options
+let backgroundColor = [
+	"#BE644B",
+	"#4877E5",
+	"#36b55c",
+	"#3D3654",
+	"#C0811B",
+	"#9A49A7",
+	"#7A7A7A",
+	"#0AB2C7"
+];
+
+// returns a background color based on a randomly selected index of all the available colors
+function getBackgroundColor()
+{
+	let index = Math.floor(Math.random() * backgroundColor.length);
+	return backgroundColor[index];
+}
+
+// change the background and button colors a to new color value 
+function changeBackgroundColor() {
+	// get an available background color and set page's background to the new color
+	let color = getBackgroundColor();
+	document.body.style.backgroundColor = color;
+	
+	// change background color of button
+	let quoteButton = document.getElementById('loadQuote');
+	quoteButton.style.backgroundColor = color;
+}
+
 // returns a quote object based on a randomly selected index of all the quotes
 function getRandomQuote() {
 	let index = Math.floor(Math.random() * quotes.length);
@@ -79,9 +109,9 @@ function printQuote() {
 	html += '</p>'
 	
 	document.getElementById('quote-box').innerHTML = html;
+	changeBackgroundColor();
 }
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
