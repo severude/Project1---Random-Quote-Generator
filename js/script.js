@@ -108,6 +108,11 @@ function printQuote() {
 	
 	html += '</p>'
 	
+	// tags property is optional, only show if available
+	if(quote.tags !== undefined) {
+		html += '<p class="tags">' + quote.tags + '</p>';
+	}
+	
 	document.getElementById('quote-box').innerHTML = html;
 	changeBackgroundColor();
 }
@@ -116,3 +121,5 @@ function printQuote() {
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+// timer for changing quotes if there is no user interaction
+setInterval(function(){ printQuote(); }, 15000);

@@ -35,7 +35,8 @@ body {
   margin-left: .1em;
   position: absolute;
 }
-.source {
+.source,
+.tags {
   font-size: 1.25rem;;
   letter-spacing: 0.05em;
   line-height: 1.1;
@@ -55,6 +56,9 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+.tags {
+  font-size: .75rem;
 }
 
 #loadQuote {
