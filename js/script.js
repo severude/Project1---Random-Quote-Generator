@@ -9,7 +9,8 @@ let quotes = [
 		quote: "We hold these truths to be self evident, that all men are created equal",
 		source: "Thomas Jefferson",
 		citation: "The Declaration of Independance",
-		year: 1776
+		year: 1776,
+		tags: "History"
 	},
 	{
 		quote: "I regret that I have but one life to lose for my country",
@@ -20,17 +21,19 @@ let quotes = [
 		quote: "We the People of the United States, in Order to form a more perfect Union",
 		source: "James Madison",
 		citation: "The Constitution of the United States",
-		year: 1787
+		year: 1787,
+		tags: "History"
 	},
 	{
 		quote: "Only a virtuous people are capable of freedom",
 		source: "Benjamin Franklin",
-		year: 1787
+		year: 1787,
+		tags: "Teaching"
 	},
 	{
 		quote: "Happiness and moral duty are inseparably connected",
 		source: "George Washington",
-		year: 1789
+		tags: "Teaching"
 	},
 	{
 		quote: "Here once the embattled farmers stood, And fired the shot heard round the world",
@@ -42,13 +45,13 @@ let quotes = [
 		quote: "Government of the people, by the people, for the people shall not perish",
 		source: "Abraham Lincoln",
 		citation: "Gettysburg Address",
-		year: 1863
+		year: 1863,
+		tags: "History"
 	}
 ];
 
 function getRandomQuote() {
 	let index = Math.floor(Math.random() * quotes.length);
-	console.log(index);
 	return quotes[index];
 }
 
