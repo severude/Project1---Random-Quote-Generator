@@ -122,4 +122,4 @@ function printQuote() {
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 // timer for changing quotes if there is no user interaction
-setInterval(function(){ printQuote(); }, 15000);
+setInterval(printQuote, 15000);
